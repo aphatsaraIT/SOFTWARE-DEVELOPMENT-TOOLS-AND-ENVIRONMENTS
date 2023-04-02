@@ -30,7 +30,7 @@ services:
     entrypoint: nodemon server.js
     depends_on:
       db:
-        condition: service_healthy 
+#         condition: service_healthy 
     volumes:
       - ./result:/app
     ports:
@@ -45,9 +45,9 @@ services:
       context: ./worker
     depends_on:
       redis:
-        condition: service_healthy 
+#         condition: service_healthy 
       db:
-        condition: service_healthy 
+#         condition: service_healthy 
     networks:
       - back-tier
 
@@ -83,7 +83,7 @@ services:
     profiles: ["seed"]
     depends_on:
       vote:
-        condition: service_healthy 
+#         condition: service_healthy 
     networks:
       - front-tier
     restart: "no"
